@@ -138,6 +138,8 @@ int main(int argc, char **argv)
 
 bool initSDL(uint32_t xs, uint32_t ys, SDLInfos *infos)
 {
+	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengles");
+
 	if (SDL_Init(SDL_INIT_JOYSTICK | SDL_INIT_VIDEO))
 	{
 		std::cerr<<"Could not initialize SDL: "<<SDL_GetError()<<std::endl;

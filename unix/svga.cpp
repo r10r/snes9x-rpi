@@ -86,6 +86,8 @@ void S9xTextMode ()
 
 void S9xInitDisplay (int /*argc*/, char ** /*argv*/)
 {
+	SDL_SetHint(SDL_HINT_RENDER_DRIVER, "opengles");
+
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | (Settings.NextAPUEnabled ? SDL_INIT_AUDIO : 0)) < 0 )
 	{
 		printf("Could not initialize SDL(%s)\n", SDL_GetError());
